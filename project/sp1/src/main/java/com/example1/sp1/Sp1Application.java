@@ -9,7 +9,7 @@ public class Sp1Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Sp1Application.class, args);
 		System.out.println("im from sp1"); 
-		
+		System.out.println("updates are done");
 	}
 
 }
