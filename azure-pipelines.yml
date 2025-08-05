@@ -14,13 +14,12 @@ steps:
       dir
       dir project
       dir project\demo
-      dir project\demo\sp1
-    displayName: "Check project/demo/sp1 structure"
+    displayName: "Check project/demo structure"
 
   - task: Maven@3
     displayName: 'Build and test with Maven'
     inputs:
-      mavenPomFile: 'project/demo/sp1/pom.xml'
+      mavenPomFile: 'project/demo/pom.xml'      # ✅ Fixed path
       mavenOptions: '-Xmx3072m'
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
