@@ -11,15 +11,16 @@ stages:
     pool:
       name: agent-pool
       demands:
-        - Agent.Name -equals agent1
         - maven
         - java
     steps:
+      - checkout: self
+
       - script: |
-          echo "Sanity check on self-hosted agent"
+          echo "Verify Java & Maven"
           java -version
           mvn -version
-        displayName: "Verify Java & Maven versions"
+        displayName: "Verify tools"
 
       - task: Maven@3
         displayName: 'Build and test with Maven'
