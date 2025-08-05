@@ -10,7 +10,7 @@ steps:
   - task: Maven@3
     displayName: 'Build and test with Maven'
     inputs:
-      mavenPomFile: 'pom.xml'
+      mavenPomFile: 'project/demo/sp1/pom.xml'   # ✅ Corrected path
       mavenOptions: '-Xmx3072m'
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
